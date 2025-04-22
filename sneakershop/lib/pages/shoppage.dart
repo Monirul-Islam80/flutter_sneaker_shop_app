@@ -12,6 +12,38 @@ class ShopPage extends StatefulWidget {
 }
 
 class _ShopPageState extends State<ShopPage> {
+  void addItemToCart(Shoe shoe) {
+    Provider.of<Cart>(context, listen: false).addItemToUserCart(shoe);
+    showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+            title: const Text("Item Added to Cart"),
+            content: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Image.asset(
+                  shoe.imagePath,
+                  width: 50,
+                  height: 50,
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  "Name: ${shoe.name}",
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  "Price: ${shoe.price}",
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ],
+            )));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer<Cart>(
@@ -75,6 +107,7 @@ class _ShopPageState extends State<ShopPage> {
 
                     return Shoetile(
                       shoe: shoe,
+                      onTap: () => addItemToCart(shoe),
                     );
                   })),
           const Padding(

@@ -10,15 +10,15 @@ class Cart extends ChangeNotifier {
         description:
             'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has '),
     Shoe(
-        name: "product2",
-        price: '333',
-        imagePath: 'lib/images/shoe2img.jpg',
-        description:
-            'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has '),
-    Shoe(
         name: "product3",
         price: '444',
         imagePath: 'lib/images/shoe3img.jpg',
+        description:
+            'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has '),
+    Shoe(
+        name: "product2",
+        price: '333',
+        imagePath: 'lib/images/shoe2img.jpg',
         description:
             'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has '),
     Shoe(
